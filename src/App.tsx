@@ -1,11 +1,17 @@
 import React from 'react';
+import Header from './components/Header';
+import FirstPage from './components/FirstPage';
+import SecondPage from './components/SecondPage';
+
 
 function App() {
   return (
     <div>
-      <h1>Hello, World!</h1>
-      <p>This is a basic functional component.</p>
+      <Header />
+      <FirstPage />
+      <SecondPage />
     </div>
+
   );
 }
 

@@ -1,0 +1,19 @@
+.header_background {
+    background: #d5d5d5;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.header_container {
+    background: #9f9f9f;
+}
+
+.heading {
+    font-size: 10rem;
+}
+.subheading {
+    font-size: 4rem;
+}

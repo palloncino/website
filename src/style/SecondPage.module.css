@@ -1,0 +1,25 @@
+.secondpage_background {
+    background: #d5d5d5;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.secondpage_container {
+    max-width: 1400px;
+}
+
+.listhead {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.listitem {
+    margin-bottom: 1rem;
+}
+
+.boldtext {
+    font-weight: 900;
+}
