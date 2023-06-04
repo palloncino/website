@@ -1,18 +1,11 @@
-// debounce(handleScroll, 100)
-export const debounce = (func: Function, delay: number) => {
+export const debounce = (func: any, delay: number) => {
+  console.log(2)
   let timeoutId: NodeJS.Timeout | null;
-  let isFirstEvent = true;
-  
   return (...args: any[]) => {
+    console.log(3)
     clearTimeout(timeoutId as NodeJS.Timeout);
-    
-    if (isFirstEvent) {
+    timeoutId = setTimeout(() => {
       func.apply(null, args);
-      isFirstEvent = false;
-    } else {
-      timeoutId = setTimeout(() => {
-        func.apply(null, args);
-      }, delay);
-    }
+    }, delay);
   };
 };

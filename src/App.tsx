@@ -3,6 +3,7 @@ import FirstPage from './components/FirstPage';
 import SecondPage from './components/SecondPage';
 import { useEffect, useRef } from 'react';
 import { debounce } from './utils/debounce';
+import { isElementInViewport } from './utils/isElementInViewPort';
 
 function App() {
 
@@ -14,15 +15,35 @@ function App() {
 
     const handleScroll = debounce((e: WheelEvent) => {
 
+      console.log(1);
+
       const scrollDirection = e.deltaY > 0 ? 'down' : 'up';
 
+      const Header = document.getElementById('Header');
       const FirstPage = document.getElementById('FirstPage');
+      const SecondPage = document.getElementById('SecondPage');
 
-      if (FirstPage && scrollDirection === 'down') {
-        FirstPage.scrollIntoView({ behavior: 'smooth' });
+      isElementInViewport('Header')
+
+      if (scrollDirection === 'down') {
+
+        if (isElementInViewport('Header') && FirstPage) {
+          FirstPage.scrollIntoView({ behavior: 'smooth' });
+        } else if (isElementInViewport('FirstPage') && SecondPage) {
+          SecondPage.scrollIntoView({ behavior: 'smooth' });
+        }
+
+      } else {
+
+        if (isElementInViewport('SecondPage') && FirstPage) {
+          FirstPage.scrollIntoView({ behavior: 'smooth' });
+        } else if (isElementInViewport('FirstPage') && Header) {
+          Header.scrollIntoView({ behavior: 'smooth' });
+        }
+        
       }
 
-    }, 200);
+    }, 200,);
 
     scrollableContainer.addEventListener('wheel', handleScroll);
 
