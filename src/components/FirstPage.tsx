@@ -3,7 +3,7 @@ import styles from '../style/FirstPage.module.css';
 
 function FirstPage() {
     return (
-        <div className={styles.firstpage_background}>
+        <div id='FirstPage' className={styles.firstpage_background}>
             <div className={styles.firstpage_container}>
                 <div className={styles.listhead}>
                     I should get a good CV (I have it) and look for:

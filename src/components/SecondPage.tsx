@@ -3,7 +3,7 @@ import styles from '../style/SecondPage.module.css';
 
 function SecondPage() {
     return (
-        <div className={styles.secondpage_background}>
+        <div id='SecondPage' className={styles.secondpage_background}>
             <div className={styles.secondpage_container}>
                 <div className={styles.listhead}>
                     Contacts
