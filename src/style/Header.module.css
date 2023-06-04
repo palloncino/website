@@ -1,5 +1,5 @@
 .header_background {
-    background: #d5d5d5;
+    /* background: url(../images/bg-1.jpg); */
     height: 100dvh;
     display: flex;
     flex-direction: column;
@@ -8,12 +8,18 @@
 }
 
 .header_container {
-    background: #9f9f9f;
 }
 
 .heading {
+    display: inline-block;
+    margin-bottom: 1rem;
+    background: #1e1d1c82;
+    text-shadow: 6px 6px 0px rgb(0, 0, 0);
+    color: #ECCE5B;
     font-size: 10rem;
 }
 .subheading {
+    background: #1e1d1c82;
+    color: #e3e1e0;
     font-size: 4rem;
 }

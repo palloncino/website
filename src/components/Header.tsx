@@ -6,7 +6,7 @@ function Header() {
         <div id='Header' className={styles.header_background}>
             <div className={styles.header_container}>
                 <div className={styles.heading}>Hello World!</div>
-                <div className={styles.subheading}>I am looking for a job in animal welfare.</div>
+                <div className={styles.subheading}>I am Seeking Employment in Animal Welfare.</div>
             </div>
         </div>
     );

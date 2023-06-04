@@ -1,5 +1,4 @@
 .secondpage_background {
-    background: #d5d5d5;
     height: 100dvh;
     display: flex;
     flex-direction: column;
@@ -9,6 +8,12 @@
 
 .secondpage_container {
     max-width: 1400px;
+    background: #1e1d1c82;
+    color: #e3e1e0;
+}
+
+.secondpage_container a {
+    color: #e3e1e0;
 }
 
 .listhead {

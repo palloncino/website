@@ -11,19 +11,15 @@ function App() {
 
   useEffect(() => {
 
+    const Header = document.getElementById('Header');
+    const FirstPage = document.getElementById('FirstPage');
+    const SecondPage = document.getElementById('SecondPage');
+
     const scrollableContainer: any = containerRef.current;
 
     const handleScroll = debounce((e: WheelEvent) => {
 
-      console.log(1);
-
       const scrollDirection = e.deltaY > 0 ? 'down' : 'up';
-
-      const Header = document.getElementById('Header');
-      const FirstPage = document.getElementById('FirstPage');
-      const SecondPage = document.getElementById('SecondPage');
-
-      isElementInViewport('Header')
 
       if (scrollDirection === 'down') {
 
@@ -45,10 +41,34 @@ function App() {
 
     }, 200,);
 
+    const handleKeyDown = (e: KeyboardEvent) => {
+
+      if (e.key === 'ArrowDown') {
+
+        if (isElementInViewport('Header') && FirstPage) {
+          FirstPage.scrollIntoView({ behavior: 'smooth' });
+        } else if (isElementInViewport('FirstPage') && SecondPage) {
+          SecondPage.scrollIntoView({ behavior: 'smooth' });
+        }
+
+      } else if (e.key === 'ArrowUp') {
+
+        if (isElementInViewport('SecondPage') && FirstPage) {
+          FirstPage.scrollIntoView({ behavior: 'smooth' });
+        } else if (isElementInViewport('FirstPage') && Header) {
+          Header.scrollIntoView({ behavior: 'smooth' });
+        }
+        
+      }
+
+    };
+
     scrollableContainer.addEventListener('wheel', handleScroll, { passive: true });
+    document.addEventListener('keydown', handleKeyDown);
 
     return () => {
       scrollableContainer.removeEventListener('wheel', handleScroll);
+      document.removeEventListener('keydown', handleKeyDown);
     };
 
   }, [])
