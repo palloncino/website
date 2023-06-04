@@ -45,7 +45,7 @@ function App() {
 
     }, 200,);
 
-    scrollableContainer.addEventListener('wheel', handleScroll);
+    scrollableContainer.addEventListener('wheel', handleScroll, { passive: true });
 
     return () => {
       scrollableContainer.removeEventListener('wheel', handleScroll);
